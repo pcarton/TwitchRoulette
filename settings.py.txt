@@ -1,0 +1,3 @@
+#Replace OAuth XYZ with your OAuth code including the "OAuth" string
+#auth should be a string, so keep the quotes
+auth = "OAuth XYZ"
