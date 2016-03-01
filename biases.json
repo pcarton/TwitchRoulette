@@ -1,0 +1,25 @@
+{
+  "streams":[{
+      "sevadus":{
+        "weight":100
+      }
+    },
+    {
+      "dansgaming":{
+        "weight":50
+      }
+    }
+  ],
+  "games":[
+    {
+      "Minecraft":{
+        "weight":100
+      }
+    },
+    {
+      "Hearthston: Heros of Warcraft":{
+        "weight":75
+      }
+    }
+  ]
+}
