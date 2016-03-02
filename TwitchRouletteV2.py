@@ -32,36 +32,25 @@ biasFile.close()
 
 def chooseStream(online):
     topName = ""
-    topGame = ""
-    topViewers = 0
+    oldWeight = 0
     for user in online['streams']:
             name = user['channel']['name']
             game = user['game']
             viewers = user['viewers']
             newWeight =0
 
-            if(name in biasJSON['streams']):
-                newWeight += int(biasJSON['streams'][name]['weight'])
-            if(game in biasJSON['games']):
-                newWeight+=int(biasJSON['games'][game]['weight'])
-            newWeight+=viewers/V
-            if(topName in biasJSON['streams']):
-                oldWeight = int(biasJSON['streams'][topName]['weight'])
-            else:
-                #print(name)
-                oldWeight = 0
-            if(topGame in biasJSON['games']):
-                oldGame = int(biasJSON['games'][topGame]['weight'])
-            else:
-                #print(game)
-                oldGame = 0
-            oldViewers = topViewers/V
-            oldWeight += oldGame
-            oldWeight += oldViewers
+            for i in range(0,len(biasJSON['streams'])):
+                if(name in biasJSON['streams'][i]['name']):
+                    newWeight += int(biasJSON['streams'][i]['weight'])
+            for i in range(0,len(biasJSON['games'])):
+                if(game in biasJSON['games']):
+                    newWeight+=int(biasJSON['games'][i]['weight'])
+                newWeight+=viewers/V
+
             if(newWeight>=oldWeight):
                 topName = name
-                topGame = game
-                topViewers = viewers
+                oldWeight = newWeight
+                print(name,newWeight)
     return topName
 
 def start():

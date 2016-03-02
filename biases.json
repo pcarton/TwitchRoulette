@@ -1,25 +1,58 @@
 {
-  "streams":[{
-      "sevadus":{
-        "weight":100
-      }
+  "streams":[
+    {
+      "name":"sevadus",
+      "weight":100
     },
     {
-      "dansgaming":{
-        "weight":50
-      }
+      "name":"giantwaffle",
+      "weight":75
+    },
+    {
+      "name":"dansgaming",
+      "weight":30
+    },
+    {
+      "name":"cirno_tv",
+      "weight":55
+    },
+    {
+      "name":"bacon_donut",
+      "weight":100
+    },
+    {
+      "name":"n3rdfusion",
+      "weight":400
+    },
+    {
+      "name":"witwix",
+      "weight":125
+    },
+    {
+      "name":"bmkibler",
+      "weight":75
+    },
+    {
+      "name":"richard_hammer",
+      "weight":125
     }
   ],
   "games":[
     {
-      "Minecraft":{
-        "weight":100
-      }
+      "name":"Minecraft",
+      "weight":100
     },
     {
-      "Hearthston: Heros of Warcraft":{
-        "weight":75
-      }
+      "name":"Super Mario Maker",
+      "weight":100
+    },
+    {
+      "name":"Hearthstone: Heroes of Warcraft",
+      "weight":100
+    },
+    {
+      "name":"Bloodborne: The Old Hunters",
+      "weight":-100
     }
   ]
 }
