@@ -53,6 +53,10 @@
     {
       "name":"Bloodborne: The Old Hunters",
       "weight":-100
+    },
+    {
+      "name":"Duelyst",
+      "weight":-1000
     }
   ]
 }
