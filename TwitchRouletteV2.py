@@ -43,14 +43,16 @@ def chooseStream(online):
                 if(name in biasJSON['streams'][i]['name']):
                     newWeight += int(biasJSON['streams'][i]['weight'])
             for i in range(0,len(biasJSON['games'])):
-                if(game in biasJSON['games']):
+                print(i, game)
+                if(game in biasJSON['games'][i]['name']):
                     newWeight+=int(biasJSON['games'][i]['weight'])
-                newWeight+=viewers/V
+                    print(int(biasJSON['games'][i]['weight']))
+                newWeight+=(viewers/V)
 
             if(newWeight>=oldWeight):
                 topName = name
                 oldWeight = newWeight
-                #print(name,newWeight)
+                print(name,game,viewers,newWeight)
     return topName
 
 def start():
@@ -74,3 +76,4 @@ def start():
 start()
 streamThread.start()
 chatThread.start()
+streamThread.join()
