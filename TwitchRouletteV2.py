@@ -50,7 +50,7 @@ def chooseStream(online):
             if(newWeight>=oldWeight):
                 topName = name
                 oldWeight = newWeight
-                print(name,newWeight)
+                #print(name,newWeight)
     return topName
 
 def start():
