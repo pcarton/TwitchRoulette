@@ -52,7 +52,7 @@ def chooseStream(online):
             if(newWeight>=oldWeight):
                 topName = name
                 oldWeight = newWeight
-                print(name,game,viewers,newWeight)
+                #print(name,game,viewers,newWeight)
     return topName
 
 def start():
@@ -69,7 +69,7 @@ def start():
         if(os.name!='posix'):
             startChat = "javaw -jar .\\Chatty_0.8.1\\Chatty.jar -channel {} -connect"
         else:
-            startChat = "java -jar .\\Chatty_0.8.1\\Chatty.jar -channel {} -connect"
+            startChat = "java -jar .\Chatty_0.8.1\Chatty.jar -channel {} -connect"
         streamThread = programThread(0,"Stream",startStream.format(stream))
         chatThread = programThread(1,"Chat", startChat.format(stream))
 
