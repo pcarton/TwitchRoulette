@@ -74,4 +74,3 @@ def start():
 start()
 streamThread.start()
 chatThread.start()
-streamThread.join()
