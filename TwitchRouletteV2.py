@@ -43,10 +43,10 @@ def chooseStream(online):
                 if(name in biasJSON['streams'][i]['name']):
                     newWeight += int(biasJSON['streams'][i]['weight'])
             for i in range(0,len(biasJSON['games'])):
-                print(i, game)
+                #print(i, game)
                 if(game in biasJSON['games'][i]['name']):
                     newWeight+=int(biasJSON['games'][i]['weight'])
-                    print(int(biasJSON['games'][i]['weight']))
+                    #print(int(biasJSON['games'][i]['weight']))
                 newWeight+=(viewers/V)
 
             if(newWeight>=oldWeight):
@@ -69,7 +69,7 @@ def start():
         if(os.name!='posix'):
             startChat = "javaw -jar .\\Chatty_0.8.1\\Chatty.jar -channel {} -connect"
         else:
-            startChat = "java -jar .\Chatty_0.8.1\Chatty.jar -channel {} -connect"
+            startChat = "java -jar ./Chatty_0.8.1/Chatty.jar -channel {} -connect"
         streamThread = programThread(0,"Stream",startStream.format(stream))
         chatThread = programThread(1,"Chat", startChat.format(stream))
 
