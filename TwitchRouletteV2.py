@@ -7,6 +7,8 @@ import sys
 import locale
 from settings import auth
 from settings import access_token
+from settings import username
+from settings import clientID
 
 e=locale.getdefaultlocale()[1]
 biasJSON = None
@@ -60,13 +62,15 @@ def start():
         global streamThread
         global chatThread
 
-        versionRequest1 = urllib.request.Request("https://api.twitch.tv/kraken/streams/followed?limit=75", headers={"Accept" : "application/vnd.twitchtv.v3+json", "Authorization" : auth})
+        versionRequest1 = urllib.request.Request("https://api.twitch.tv/kraken/streams/followed?limit=75", headers={"Accept" : "application/vnd.twitchtv.v3+json", "Client-ID" : clientID , "Authorization" : "OAuth "+access_token})
+        #print(versionRequest1)
         streamsFromAPI =urllib.request.urlopen(versionRequest1).read().decode('ascii','ignore')
         streamsJSON = json.loads(streamsFromAPI)
+        print(streamsJSON)
 
 
         stream = chooseStream(streamsJSON)
-        startStream = "livestreamer --twitch-oauth-token {1} twitch.tv/{2} best"
+        startStream = "livestreamer --twitch-oauth-token {} twitch.tv/{} best"
         if(os.name!='posix'):
             startChat = "javaw -jar .\\Chatty_0.8.1\\Chatty.jar -channel {} -connect"
         else:

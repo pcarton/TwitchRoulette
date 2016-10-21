@@ -2,3 +2,5 @@
 #auth should be a string, so keep the quotes
 auth = "OAuth XYZ"
 access_token = "TOKEN"
+clientID = "ID"
+username = "USERNAME"
