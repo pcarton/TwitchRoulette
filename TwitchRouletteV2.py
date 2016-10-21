@@ -6,6 +6,7 @@ import urllib.request, urllib.error, urllib.parse
 import sys
 import locale
 from settings import auth
+from settings import access_token
 
 e=locale.getdefaultlocale()[1]
 biasJSON = None
@@ -65,12 +66,12 @@ def start():
 
 
         stream = chooseStream(streamsJSON)
-        startStream = "livestreamer twitch.tv/{} best"
+        startStream = "livestreamer --twitch-oauth-token {1} twitch.tv/{2} best"
         if(os.name!='posix'):
             startChat = "javaw -jar .\\Chatty_0.8.1\\Chatty.jar -channel {} -connect"
         else:
             startChat = "java -jar ./Chatty_0.8.1/Chatty.jar -channel {} -connect"
-        streamThread = programThread(0,"Stream",startStream.format(stream))
+        streamThread = programThread(0,"Stream",startStream.format(access_token,stream))
         chatThread = programThread(1,"Chat", startChat.format(stream))
 
 start()
