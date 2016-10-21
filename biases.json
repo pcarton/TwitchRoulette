@@ -26,7 +26,7 @@
     },
     {
       "name":"witwix",
-      "weight":125
+      "weight":150
     },
     {
       "name":"bmkibler",
@@ -56,7 +56,7 @@
     },
     {
       "name":"Duelyst",
-      "weight":-1000
+      "weight":-10000
     }
   ]
 }
