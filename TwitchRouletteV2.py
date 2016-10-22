@@ -66,7 +66,7 @@ def start():
         #print(versionRequest1)
         streamsFromAPI =urllib.request.urlopen(versionRequest1).read().decode('ascii','ignore')
         streamsJSON = json.loads(streamsFromAPI)
-        print(streamsJSON)
+        #print(streamsJSON)
 
 
         stream = chooseStream(streamsJSON)
