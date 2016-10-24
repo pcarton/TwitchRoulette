@@ -44,6 +44,6 @@ Temporary Items
 *.pyc
 settings.py
 TwitchRouletteV2.pyw
-Chatty_0.8.3
+Chatty_*
 *.lnk
 biases.json
