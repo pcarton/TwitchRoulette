@@ -72,7 +72,7 @@ def start():
         stream = chooseStream(streamsJSON)
         startStream = "livestreamer --twitch-oauth-token {} twitch.tv/{} best"
         if(os.name!='posix'):
-            startChat = "javaw -jar .\\Chatty_0.8.1\\Chatty.jar -channel {} -connect"
+            startChat = "javaw -jar .\\Chatty_0.8.4\\Chatty.jar -channel {} -connect"
         else:
             startChat = "java -jar ./Chatty_0.8.3/Chatty.jar -channel {} -connect"
         streamThread = programThread(0,"Stream",startStream.format(access_token,stream))
