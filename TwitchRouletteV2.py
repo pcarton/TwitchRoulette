@@ -74,7 +74,7 @@ def start():
         if(os.name!='posix'):
             startChat = "javaw -jar .\\Chatty_0.8.4\\Chatty.jar -channel {} -connect"
         else:
-            startChat = "java -jar ./Chatty_0.8.3/Chatty.jar -channel {} -connect"
+            startChat = "java -jar ./Chatty_0.8.3/Chatty.jar -channel {} -connect &> /dev/null"
         streamThread = programThread(0,"Stream",startStream.format(access_token,stream))
         chatThread = programThread(1,"Chat", startChat.format(stream))
 
