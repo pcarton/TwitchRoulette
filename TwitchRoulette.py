@@ -1,5 +1,3 @@
-#TODO rewrite for api v5 : https://blog.twitch.tv/action-required-twitch-api-version-update-f3a21e6c3410#.4u8sg3ggo
-
 import os
 import subprocess
 import threading
